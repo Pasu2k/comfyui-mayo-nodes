@@ -2,7 +2,9 @@
 Just some nodes with niche usecases, mainly for myself, but maybe for others as well
 
 ## How to install
-Open your `custom_nodes` folder in your ComfyUI installation, right-click inside the folder and open in Terminal. Paste the following command: ```git clone https://github.com/Pasu2k/comfyui-mayo-nodes/```
+Open your `custom_nodes` folder in your ComfyUI installation, right-click inside the folder and open in Terminal. Paste the following command: 
+
+```git clone https://github.com/Pasu2k/comfyui-mayo-nodes/```
 
 ## Overview of nodes
 
