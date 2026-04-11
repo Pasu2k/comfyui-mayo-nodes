@@ -2,7 +2,7 @@
 Just some nodes with niche usecases, mainly for myself, but maybe for others as well
 
 ## Mayo Aspect Ratio Randomizer
-![Preview of the node Mayo Aspect Ratio Randomizer](https://media.discordapp.net/attachments/1424092165566501016/1492493935984115732/image.png)
+![Preview of the node Mayo Aspect Ratio Randomizer](https://github.com/Pasu2k/comfyui-mayo-nodes/blob/main/img/mayo_aspect_ratio_randomizer.png)
 
 A node that allows you to choose a base latent size in certain aspect ratios, as well as the option to randomize the latent aspect ratio and/or orientation. All sizes are divisible by 16 to ensure maximum compatability with most models, like SDXL, Illustrious, Noob, and more.
 
