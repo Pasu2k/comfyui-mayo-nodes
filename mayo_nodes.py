@@ -133,6 +133,21 @@ class MayoTimeFormatter:
         "MMDDYYYY": "%m%d%Y",
         "DDMMYYYY": "%d%m%Y",
         "Month DD YYYY": "%B %d %Y",
+        "DD Month YYYY": "%d %B %Y",
+        "YY-MM-DD": "%y-%m-%d",
+        "MM-DD-YY": "%m-%d-%y",
+        "DD-MM-YY": "%d-%m-%y",
+        "YYMMDD": "%y%m%d",
+        "MMDDYY": "%m%d%y",
+        "DDMMYY": "%d%m%y",
+        "Month DD YY": "%B %d %y",
+        "DD Month YY": "%d %B %y",
+        "MM-DD": "%m-%d",
+        "DD-MM": "%d-%m",
+        "MMDD": "%m%d",
+        "DDMM": "%d%m",
+        "Month DD": "%B %d",
+        "DD Month": "%d %B",
     }
 
     TIME_FORMATS = {
@@ -162,21 +177,22 @@ class MayoTimeFormatter:
     FUNCTION = "format_time"
     CATEGORY = "MayoNodes"
 
+    @classmethod
+    def IS_CHANGED(s, **kwargs):
+        return datetime.now().timestamp()
+
     def format_time(self, use_date, date_format, use_time, time_format, delimiter):
         now = datetime.now()
         parts = []
 
-        # 1. Handle Date
         if use_date:
             actual_date_format = self.DATE_FORMATS.get(date_format, "%Y-%m-%d")
             parts.append(now.strftime(actual_date_format))
 
-        # 2. Handle Time
         if use_time:
             actual_time_format = self.TIME_FORMATS.get(time_format, "%H-%M-%S")
             parts.append(now.strftime(actual_time_format))
 
-        # 3. Combine with delimiter if both exist, otherwise return what we have (or empty string)
         if not parts:
             return ("",)
             
