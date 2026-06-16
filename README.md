@@ -1,7 +1,12 @@
 # MayoNodes
+![Header Image](https://github.com/Pasu2k/comfyui-mayo-nodes/blob/main/img/mayo-nodes.jpg)
 Just some nodes with niche usecases, mainly for myself, but maybe for others as well
 
 ## How to install
+Option 1
+Search for "Mayo Nodes" in the ComfyUI Node Manager
+
+Option 2
 Open your `custom_nodes` folder in your ComfyUI installation, right-click inside the folder and open in Terminal. Paste the following command: 
 
 ```git clone https://github.com/Pasu2k/comfyui-mayo-nodes/```
