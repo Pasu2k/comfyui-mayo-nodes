@@ -19,3 +19,8 @@ By default, aspect ratios of 1:1, 3:4, 5:8 and 9:16 are included, but users can 
 ![Preview of the node Mayo Dropdown](https://github.com/Pasu2k/comfyui-mayo-nodes/blob/main/img/mayo_dropdown.png)
 
 A dropdown node with the ability to customize the dropdown list to whatever you want. The outputs are either the `STRING` name of the chosen value, or an `INT` ordered by position in the list, starting with 1. Right-click the node, open the Properties Panel, to customize the dropdown values.
+
+### Mayo Time Formatter
+![Preview of the node Mayo Time Formatter](https://github.com/Pasu2k/comfyui-mayo-nodes/blob/main/img/mayo_time_formatter.png)
+
+Since many nodes use different formats to time, this node was created to output a clean text string with the current date and/or time in the user preferred format.
