@@ -24,13 +24,13 @@ license = "MIT"
 [project.urls]
 Repository = "https://github.com/Pasu2k/comfyui-mayo-nodes"
 #  Used by Comfy Registry https://registry.comfy.org
-Documentation = "https://github.com/Pasu2k/comfyui-mayo-nodes/wiki"
+Documentation = "https://github.com/Pasu2k/comfyui-mayo-nodes"
 "Bug Tracker" = "https://github.com/Pasu2k/comfyui-mayo-nodes/issues"
 
 [tool.comfy]
 PublisherId = "mayo"
 DisplayName = "comfyui-mayo-nodes"
-Icon = ""
+Icon = "https://github.com/Pasu2k/comfyui-mayo-nodes/blob/main/img/mayo-nodes.jpg"
 includes = [] 
 # "requires-comfyui" = ">=1.0.0"  # ComfyUI version compatibility
 
