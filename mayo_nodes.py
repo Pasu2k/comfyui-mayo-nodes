@@ -1,6 +1,7 @@
 import torch
 import random
 import os
+from datetime import datetime
 
 class MayoDropdown:
     @classmethod
@@ -122,3 +123,62 @@ class MayoLatent:
         latent = torch.zeros([batch_size, 4, height // 8, width // 8])
             
         return ({"samples": latent}, width, height, batch_size)
+
+class MayoTimeFormatter:
+    DATE_FORMATS = {
+        "YYYY-MM-DD": "%Y-%m-%d",
+        "MM-DD-YYYY": "%m-%d-%Y",
+        "DD-MM-YYYY": "%d-%m-%Y",
+        "YYYYMMDD": "%Y%m%d",
+        "MMDDYYYY": "%m%d%Y",
+        "DDMMYYYY": "%d%m%Y",
+        "Month DD YYYY": "%B %d %Y",
+    }
+
+    TIME_FORMATS = {
+        "HH-MM-SS": "%H-%M-%S",
+        "HH-MM": "%H-%M",
+        "HHMMSS": "%H%M%S",
+        "HHMM": "%H%M",
+    }
+
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "use_date": ("BOOLEAN", {"default": True}),
+                "date_format": (list(s.DATE_FORMATS.keys()),),
+                "use_time": ("BOOLEAN", {"default": True}),
+                "time_format": (list(s.TIME_FORMATS.keys()),),
+                "delimiter": ("STRING", {"default": "_"}),
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("string",)
+    FUNCTION = "format_time"
+    CATEGORY = "MayoNodes"
+
+    def format_time(self, use_date, date_format, use_time, time_format, delimiter):
+        now = datetime.now()
+        parts = []
+
+        # 1. Handle Date
+        if use_date:
+            actual_date_format = self.DATE_FORMATS.get(date_format, "%Y-%m-%d")
+            parts.append(now.strftime(actual_date_format))
+
+        # 2. Handle Time
+        if use_time:
+            actual_time_format = self.TIME_FORMATS.get(time_format, "%H-%M-%S")
+            parts.append(now.strftime(actual_time_format))
+
+        # 3. Combine with delimiter if both exist, otherwise return what we have (or empty string)
+        if not parts:
+            return ("",)
+            
+        final_string = delimiter.join(parts)
+        return (final_string,)
