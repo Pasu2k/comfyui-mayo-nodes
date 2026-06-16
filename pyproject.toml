@@ -30,7 +30,7 @@ Documentation = "https://github.com/Pasu2k/comfyui-mayo-nodes"
 [tool.comfy]
 PublisherId = "mayo"
 DisplayName = "comfyui-mayo-nodes"
-Icon = "https://github.com/Pasu2k/comfyui-mayo-nodes/blob/main/img/mayo-nodes.jpg"
+Icon = "https://raw.githubusercontent.com/Pasu2k/comfyui-mayo-nodes/refs/heads/main/img/mayo-nodes.jpg"
 includes = [] 
 # "requires-comfyui" = ">=1.0.0"  # ComfyUI version compatibility
 
