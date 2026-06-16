@@ -5,16 +5,18 @@
 @description: Just some nodes with niche usecases, mainly for myself, but maybe for others as well~
 """
 
-from .mayo_nodes import MayoDropdown, MayoLatent
+from .mayo_nodes import MayoDropdown, MayoLatent, MayoTimeFormatter
 
 NODE_CLASS_MAPPINGS = {
     "MayoDropdown": MayoDropdown,
     "MayoLatent": MayoLatent,
+    "MayoTimeFormatter": MayoTimeFormatter,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "MayoDropdown": "Mayo Dropdown",
-    "MayoLatent": "Mayo Aspect Ratio Randomizer",
+    "MayoLatent": "Mayo SDXL Latent",
+    "MayoTimeFormatter": "Mayo Time Formatter",
 }
 
 WEB_DIRECTORY = "./js"

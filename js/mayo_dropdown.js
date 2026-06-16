@@ -56,8 +56,18 @@ app.registerExtension({
             // Initial sync
             setTimeout(() => {
                 refreshDropdown();
-                // Final layout pass to collapse the empty space
-                this.setSize(this.computeSize());
+                
+                // --- FIXED UX LOGIC ---
+                // If the node doesn't have a custom width saved (or it's close to 0), auto-size it once.
+                // Otherwise, leave the user's saved size completely alone!
+                if (!this.size || this.size[0] < 50) {
+                    this.setSize(this.computeSize());
+                } else {
+                    // Just recalc the minimum height bounds so it collapses nicely without changing width
+                    const idealSize = this.computeSize();
+                    this.size[1] = idealSize[1]; 
+                }
+                
                 this.setDirtyCanvas(true, true);
             }, 20);
         };
