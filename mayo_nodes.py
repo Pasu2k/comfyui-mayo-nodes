@@ -1,6 +1,7 @@
 import torch
 import random
 import os
+import re
 from datetime import datetime
 
 class MayoDropdown:
@@ -198,3 +199,36 @@ class MayoTimeFormatter:
             
         final_string = delimiter.join(parts)
         return (final_string,)
+
+class MayoTextFormatter:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "text": ("STRING", {"default": "", "multiline": True}),
+                "replace_underscores_with_spaces": ("BOOLEAN", {"default": False}),
+                "everything_lowercase": ("BOOLEAN", {"default": False}),
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("string",)
+    FUNCTION = "format_text"
+    CATEGORY = "MayoNodes"
+
+    def format_text(self, text, replace_underscores_with_spaces, everything_lowercase):
+        result = text
+
+        # Add a space after every comma, unless already followed by a space or underscore
+        result = re.sub(r",(?![ _])", ", ", result)
+
+        if replace_underscores_with_spaces:
+            result = result.replace("_", " ")
+
+        if everything_lowercase:
+            result = result.lower()
+
+        return (result,)
