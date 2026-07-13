@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI-Mayo-Nodes"
 description = "Sleek and responsive custom nodes for latent aspect ratio management, time formatting, and dynamic dropdown properties."
-version = "0.3.3"
+version = "0.3.4"
 license = "MIT" 
 
 [project.urls]
@@ -17,5 +17,6 @@ Icon = "https://raw.githubusercontent.com/Pasu2k/comfyui-mayo-nodes/refs/heads/m
 Nodes = [
     "MayoDropdown",
     "MayoLatent",
-    "MayoTimeFormatter"
+    "MayoTimeFormatter",
+	"MayoTextFormatter"
 ]
